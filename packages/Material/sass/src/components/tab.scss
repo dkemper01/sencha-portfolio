@@ -1,0 +1,90 @@
+﻿@mixin md-tab {
+    .x-tab.md-tab {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        height: 100%;
+        text-align: center;
+        cursor: pointer;
+        border: 1px dotted transparent;
+        padding: 20px 24px;
+        box-sizing: border-box;
+        -webkit-transition: background 0.35s cubic-bezier(0.35, 0, 0.25, 1), color 0.35s cubic-bezier(0.35, 0, 0.25, 1);
+        transition: background 0.35s cubic-bezier(0.35, 0, 0.25, 1), color 0.35s cubic-bezier(0.35, 0, 0.25, 1);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background: none;
+    }
+
+    .x-tab.md-tab.x-item-disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    .x-tab.md-tab:focus {
+        outline: none;
+    }
+
+    .x-tab.md-tab .x-tab-label {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        z-index: 100;
+        opacity: 1;
+        overflow: hidden;
+    }
+
+    .x-tabbar.x-docked-top {
+        background: #1976D2;
+        border: none;
+    }
+
+    .x-tabbar.x-docked-top x-tabbar.x-docked-top-ink-bar {
+        background: #ffff85;
+    }
+
+    .x-tabbar.x-docked-top .x-tab.md-tab {
+        color: #b3e5fc;
+        height: 100%;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        border: 2px solid transparent;
+    }
+
+    .x-tabbar.x-docked-top .x-tab.md-tab.x-tab-active {
+        color: white;
+        background: transparent;
+        border-bottom-color: #ffff85;
+    }
+
+    .x-tabbar.x-docked-top .x-tab.md-tab.x-item-disabled {
+        color: rgba(0, 0, 0, 0.12);
+    }
+
+    .x-tabbar.x-docked-top .x-tab.md-tab:focus {
+        border-color: rgba(0, 0, 0, 0.73);
+    }
+
+    .x-tabbar.x-docked-top .x-tab.md-tab .md-ripple-container {
+        color: #ffff85;
+    }
+  .x-tabbar.x-docked-top .x-tab .x-button-label
+  {
+    font-size: 0.7em;
+  }
+}

@@ -1,0 +1,38 @@
+@mixin md-toolbar {
+  .x-toolbar.x-toolbar-dark {
+    background: none;
+    background-color: $md-primary-color-700;
+    color: $md-white-100;
+
+    .x-button {
+      &.x-iconalign-center {
+        padding: $standard-padding;
+
+        @include border-radius(50%);
+
+        .x-button-label, .x-badge {
+          display: none !important;
+        }
+
+        .x-button-icon {
+          width: 1.2em !important;
+          height: 1.2em !important;
+          font-size: 1em !important;
+          color: $md-white-100;
+
+          &:before {
+
+          }
+        }
+
+        &.x-button-pressing {
+          background-color: $md-black-12;
+        }
+      }
+    }
+
+    .x-title {
+        text-align: left;
+    }
+  }
+}

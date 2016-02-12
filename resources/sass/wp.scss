@@ -1,0 +1,320 @@
+$dark-theme: false;
+$base-color: #2672ec;
+$background-color: #ccc;
+$background-color-card: #eee;
+$tabbar-bottom-background: #dedede;
+
+@import 'sencha-touch/windows';
+@import 'sencha-touch/windows/all';
+
+@include icon('photos');
+
+a:link {
+    color: rgba(38,114,236, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(38,114,236, .8);
+}
+
+a:active {
+    color: rgba(38,114,236, .6);
+}
+
+.x-docked-bottom.x-tabbar-light {
+    background: $tabbar-bottom-background;
+}
+
+.x-html pre {
+    margin: 0;
+}
+
+.x-layout-card {
+    background: $background-color-card;
+}
+.x-layout-card-item {
+    background: $background-color-card;
+}
+
+
+.card > .x-body .x-innerhtml,
+.card > .x-inner > .x-innerhtml,
+.card > .x-dock-vertical > .x-dock-body .x-innerhtml {
+   padding: 10px;
+}
+
+.ks-basic .x-dataview {
+    background: $background-color-card;
+
+    .x-dataview-item {
+        padding: 1em;
+        text-align: center;
+        color: #000;
+
+        img {
+            margin: 1em;
+        }
+
+        &:nth-child(odd) {
+            color: white;
+            background: black;
+        }
+        &:nth-child(even) {
+            color: black;
+            background: white;
+        }
+    }
+}
+
+.x-iconalign-left .x-button-label, .x-iconalign-left .x-badge {
+    margin-left: 0px;
+}
+
+.x-list {
+    .x-list-item {
+        line-height: 42px;
+        color: #333;
+        font-size: $font-size-medium;
+
+        .x-dock-horizontal {
+            border-top: 0;
+        }
+
+        .x-list-item-body,
+        &.x-list-item-tpl .x-innerhtml {
+            padding: 1px 5px;
+        }
+
+        &.x-item-selected {
+            .x-dock-horizontal,
+            &.x-list-item-tpl .x-innerhtml {
+                background-color: #fff;
+                color: #333;
+            }
+        }
+    }
+
+    .x-list-item-odd {
+        &.x-list-item-tpl,
+        .x-dock-horizontal {
+            background-color: darken($base-color, 5%);
+            border-bottom: 1px solid darken($base-color, 5%);
+        }
+    }
+
+    .x-list-header {
+        background-color: #333;
+        border: 0;
+        padding: 0.1em 1.02em 0.2em 0.65em;
+        padding-left: 5px !important;
+        font-weight: normal;
+        font-size: 17pt;
+
+        .x-innerhtml {
+          padding: .5em 0 0 .2em;
+          min-width: 44px;
+          min-height: 44px;
+          background-color: #333;
+          color: $foreground-color;
+          display: inline-block;
+          width: auto;
+        }
+    }
+
+    // Disclosure
+    .x-list-disclosure {
+        border: 0;
+        background: #333;;
+        width: 29px;
+        height: 29px;
+        line-height: 26px;
+        text-align: center;
+        margin: 7px 6px 0 0;
+
+        &:before {
+            content: '>';
+            color: color-by-background($base-color);
+        }
+    }
+
+    .x-item-selected .x-list-disclosure {
+        &:before {
+            color: $base-color;
+        }
+    }
+}
+
+#launchscreen {
+    background-color: $background-color;
+    padding: 0 20px;
+
+    h2 {
+        clear: both;
+
+        span {
+            font-size: 24px;
+            color: rgba(255,255,255,.6);
+        }
+    }
+
+    .feature {
+        @if ($dark-theme) {
+            background: #222;
+        } @else {
+            background: #eee;
+        }
+
+        padding: 20px;
+        width: 47%;
+        margin: 10px 20px 20px 0;
+        min-height: 150px;
+        float: left;
+
+        &.main {
+            float: normal;
+            width: auto;
+            min-height: auto;
+        }
+
+        img {
+            display: none;
+        }
+
+        h3 {
+            font-family: "Segoe UI Light", "HelveticaNeue-Light", Helvetica;
+            font-size: 24px;
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-family: "Segoe UI Semilight", "HelveticaNeue-Light", Helvetica;;
+            font-size: 15px;
+        }
+    }
+
+    footer {
+        clear: both;
+        font-family: "Segoe UI Semilight", "HelveticaNeue-Light", Helvetica;;
+        font-size: 15px;
+    }
+}
+#mainNavigationBar {
+    background-color: $background-color;
+    /* offset the title by the width of the source button */
+    padding-left: 3%;
+}
+
+#mainNestedList {
+    background-color: $background-color;
+}
+
+#mainNestedList .x-list-inner .x-list-item:last-child {
+    .x-tablet &, .x-desktop & {
+        overflow: visible;
+
+        &:after {
+            content: "\00a0";
+            position: absolute;
+            bottom: -80px;
+            margin-bottom: 20px;
+            left: 75px;
+            width: 30px;
+            height: 43px;
+            pointer-events: none;
+            background-image: url(../images/sencha_small.png);
+        }
+    }
+}
+
+#mainNestedList > div {
+    background-color: $background-color-card;
+}
+
+.appart {
+  width: 50px;
+  margin-right: 10px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  vertical-align: middle;
+ }
+ 
+.app-details-panel {
+    width: 100%;
+    text-align: left;
+    margin-top: 0px;
+ }
+ 
+ .app-details-panel p {
+    font-size: 1.50em;
+ }
+ 
+ .app-details-panel ol {
+    display: block;
+    padding: 0 0 0 26px;
+    overflow: hidden;
+    counter-reset: numList;
+}
+
+.app-details-panel ol li {
+    position: relative;
+    margin: 3px;
+}
+
+.app-details-panel ol li:before {
+    counter-increment: numList;
+    content: counter(numList);
+    
+    position: absolute;
+    left: -25px;
+    
+    font: bold 12px sans-serif;
+    text-align: center;
+    color: #fff;
+    line-height: 19px;
+    
+    width: 19px; height: 19px;
+    background: #333;
+    
+    border-radius: 999px
+}
+
+.x-container-screenshots, .x-container-details {
+    background-color: $background-color;
+}
+
+.windows-background {
+    background-color: $background-color-card;
+}
+
+.x-carousel-indicator > *
+{
+    background-color: white !important;
+    opacity: 0.4;
+}
+.x-carousel-indicator > .x-carousel-indicator-active
+{
+    opacity: 1;
+}
+
+.hexaflip {
+    margin: 0 auto;
+}
+
+.hexaflip-cube > div {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.hexaflip-cube .hexaflip-side {
+    width: 100.5%;
+    height: 100.5%;
+    overflow: hidden;
+    position: absolute;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-color: $background-color;
+    text-align: center;
+}

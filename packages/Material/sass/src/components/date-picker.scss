@@ -1,0 +1,387 @@
+
+@mixin md-date-picker {
+  $date-picker-color: #00bcd4;
+  $date-picker-text-color: $md-white-100;
+  $date-picker-calendar-text-color: $md-black-87;
+  $date-picker-select-color: #0097a7;
+  $date-picker-select-text-color: $md-white-100;
+
+  .md-date-picker {
+    //margin: 0 !important;
+    &.x-msgbox.x-msgbox-dark {
+      padding: 0 !important;
+      border-color: #FAFAFA;
+    }
+
+    &.portrait {
+      width: 280px;
+
+      .md-date-details, .main-panel {
+        width: 100% !important;
+      }
+
+      .main-panel {
+        height: 275px;
+      }
+    }
+
+    &.landscape {
+      width: 560px;
+      max-width: 650px;
+
+      .md-date-details, .main-panel {
+        width: 50% !important;
+      }
+
+      .md-date-details {
+        border-top-right-radius: 0;
+
+        .day-of-week {
+          border-top-right-radius: 0;
+        }
+
+        .day-of-month {
+          padding: $standard-spacing * 3 0 !important;
+
+          .day {
+            padding: $standard-spacing * 3 0 !important;
+            font-size: 72px;
+          }
+        }
+      }
+
+      .main-panel {
+        .calendar {
+          border-top-right-radius: $standard-radius;
+
+          & > .x-panel-inner {
+            border-top-right-radius: $standard-radius;
+          }
+
+          .month-bar {
+            border-top-right-radius: $standard-radius;
+
+            .x-button.x-button-forward {
+              border-top-right-radius: $standard-radius;
+            }
+          }
+        }
+      }
+    }
+
+    .main-panel {
+      .month-picker {
+        background: $md-white-100 !important;
+        border-right: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        .x-scroll-container {
+          background: $md-white-100 !important;
+
+          .x-data-item {
+            overflow: hidden;
+
+            &.md-4-weeks {
+              height: 205px;
+            }
+
+            &.md-5-weeks {
+              height: 235px;
+            }
+
+            &.md-6-weeks {
+              height: 270px;
+            }
+          }
+        }
+      }
+
+      .year-picker {
+        background: $md-white-100 !important;
+        width: 72px !important;
+        margin: 0 auto !important;
+        border-right: 0 !important;
+        border-left: 0 !important;
+
+        .x-scroll-view {
+          border-right: 0 !important;
+          border-left: 0 !important;
+
+          .x-scroll-bar-grid-wrapper {
+            background: transparent !important;
+          }
+
+          .x-scroll-container {
+            background: $md-white-100 !important;
+            border-right: 0 !important;
+            border-left: 0 !important;
+
+            .x-dataview-inner {
+              border-right: 0 !important;
+              border-left: 0 !important;
+
+              .x-dataview-container {
+                border-right: 0 !important;
+                border-left: 0 !important;
+
+                .x-dataview-item {
+                  color: $date-picker-calendar-text-color;
+                  height: 72px !important;
+                  width: 72px !important;
+                  line-height: 72px !important;
+                  padding: 0 !important;
+                  border-right: 0 !important;
+                  border-left: 0 !important;
+
+                  .x-picker-item {
+                  }
+
+                  &.x-item-selected {
+                    @include border-radius(50%);
+                    background: $md-black-54 !important;
+                    background-image: radial-gradient(circle at center center, $md-white-100, $md-black-54);
+                  }
+/*                  & .x-picker-left {
+                    text-align: center;
+                  }*/
+                }
+              }
+            }
+          }
+        }
+
+        .x-mask {
+          background: $md-white-100 !important;
+        }
+      }
+    }
+
+    .x-dock.x-sized {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .x-panel {
+      width: 100% !important;
+      background-color: transparent;
+
+      .x-label {
+        color: $date-picker-calendar-text-color;
+        background: transparent;
+        width: 100%;
+        text-align: center;
+        font-weight: 300;
+      }
+    }
+
+    .main-container {
+      .x-panel-inner {
+        border-top-left-radius: $standard-radius;
+        border-top-right-radius: $standard-radius;
+      }
+    }
+
+    .md-date-details {
+      border-top-left-radius: $standard-radius;
+      border-top-right-radius: $standard-radius;
+      display: block !important;
+
+      .day-of-week {
+        border-top-left-radius: $standard-radius;
+        border-top-right-radius: $standard-radius;
+        font-size: 13px;
+        height: 32px;
+        line-height: 32px;
+        background-color: $date-picker-select-color;
+        color: $date-picker-select-text-color;
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      .day-of-month {
+        display: block;
+        width: 100%;
+        padding: $standard-spacing*2 0;
+        background-color: $date-picker-color;
+
+        button {
+          margin: 0;
+          padding: 0;
+          color: rgba(255, 255, 255, 1)!important;
+          height: auto !important;
+          display: block;
+          width: 100%;
+          text-align: center;
+          background: none !important;
+          background-color: transparent !important;
+          font-family: 'Helvetica Neue', HelveticaNeue, Helvetica-Neue, Helvetica, 'BBAlpha Sans', sans-serif;
+          border-color: transparent;
+        }
+
+        .month {
+          &.highlight {
+            color: $date-picker-select-text-color;
+          }
+
+          font-size: 22px;
+          text-transform: uppercase;
+        }
+
+        .day {
+          &.highlight {
+            color: $date-picker-select-text-color;
+          }
+
+          margin: 6px 0;
+          font-size: 58px;
+          font-weight: 700;
+        }
+
+        .year {
+          &.highlight {
+            color: $date-picker-select-text-color;
+          }
+
+          font-size: 22px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .md-calendar-item {
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      overflow: hidden;
+
+      &.md-4-weeks {
+        height: 204px;
+      }
+
+      &.md-5-weeks {
+        height: 240px;
+      }
+
+      &.md-6-weeks {
+        height: 276px;
+      }
+
+      > .header, > .week-bar {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+
+      > .header {
+        line-height: 32px;
+        font-size: 14px;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      > .week-bar {
+        padding: 0 14px $standard-spacing 14px;
+
+        span {
+          font-size: 12px;
+          width: 36px;
+          height: 12px;
+          background-size: 36px 12px;
+          border: 0;
+          padding: 0;
+          margin: 0;
+          display: inline-block;
+          text-align: center;
+          font-weight: 500;
+          color: rgba(0, 0, 0, 0.5);
+          line-height: 12px;
+        }
+      }
+
+      > .week {
+       // padding: 0 14px;
+
+        > button {
+          @include border-radius(50%);
+
+          display: inline-block;
+          font-size: 12px;
+          width: 36px;
+          height: 36px;
+          background-size: 36px 36px;
+          background-color: transparent;
+          color: $md-black-87;
+          border-color: transparent;
+
+          &.selected {
+            background-color: rgb(0, 151, 167);
+            color: $md-white-100;
+          }
+
+          &.today:not(.selected) {
+            color: rgb(0, 151, 167);
+          }
+        }
+      }
+    }
+  }
+  .x-picker-slot .x-picker-item
+  {
+    // color: #fff;
+  }
+  .x-picker-left {
+    text-align: center;
+  }
+  .md-date-picker .main-panel .year-picker .x-scroll-view .x-scroll-container .x-dataview-inner .x-dataview-container .x-dataview-item.x-item-selected
+  {
+    background: #0097a7 !important;
+  }
+  .x-toolbar.x-toolbar-dark {
+    background-color: #fff !important;
+    .x-button {
+      background: none !important;
+      background-color: transparent !important;
+      color: #3F73F4 !important;
+      border: none !important;
+      margin: $standard-spacing $standard-spacing/2 !important;
+      padding: $standard-spacing !important;
+
+      font-weight: normal !important;
+      text-align: center !important;
+      height: auto !important;
+      display: inline-block !important;
+      min-width: 64px !important;
+      border-radius: 1px !important;
+      .x-button-label {
+        text-align: center !important;
+      }
+      span {
+        opacity: 1;
+      }
+
+    }
+
+  }
+  // for colorpicker
+  .x-panel.x-floating
+  {
+    background-color: #ffffff!important;
+    border-radius: 0px!important;
+  }
+  .x-toolbar.x-toolbar-dark .x-button
+  {
+    &:focus,
+    &:hover {
+      background: #EEEEEE!important;
+      background-color: #EEEEEE ;
+    }
+  }
+  // end colorpicker
+}
+
+

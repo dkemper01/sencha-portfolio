@@ -1,0 +1,57 @@
+@mixin md-button-default {
+    $button-border-radius: 2px !default;
+    $button-fab-border-radius: 50% !default;
+
+    .x-button.md-button {
+        @include border-radius($button-border-radius);
+
+        &:not(.x-item-disabled) {
+            &:hover,
+            &:focus {
+                background-color: $foreground-tertiary-color;
+            }
+        }
+
+        &.x-button-primary {
+            color: $accent-3-color;
+
+            &.md-raised,
+            &.md-fab {
+                color: $foreground-primary-color;
+                background-color: $accent-3-color;
+
+                &:not(.x-item-disabled) {
+                    &:hover,
+                    &:focus {
+                        background-color: $accent-2-color;
+                    }
+                }
+            }
+        }
+
+        &.md-fab {
+            border-radius: $button-fab-border-radius;
+        }
+
+        &.md-raised,
+        &.md-fab {
+            color: $foreground-primary-color;            
+            background-color: $accent-3-color;
+
+            &:not(.x-item-disabled) {
+                &:hover,
+                &:focus {       
+                    background-color: $accent-2-color;
+                }
+            }
+        }
+
+        &.x-item-disabled,
+        &.md-raised.x-item-disabled,
+        &.md-fab.x-item-disabled {
+            color: $foreground-tertiary-color;
+            background-color: transparent;
+            cursor: not-allowed;
+        }
+    }
+}

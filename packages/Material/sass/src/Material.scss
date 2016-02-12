@@ -1,0 +1,56 @@
+//@import "../var/color-palette.scss";
+@import "../var/variables.scss";
+@import "../var/mixins.scss";
+
+
+
+
+
+.md-shadow {
+    posix-picker-lefttion: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.md-shadow-bottom-z-1 {
+    @include box-shadow(0px 2px 2px 0  $md-black-54);
+}
+
+.md-shadow-bottom-z-2 {
+    @include box-shadow(0px 2px 8px 0 $md-black-54);
+}
+
+.md-shadow-animated.md-shadow {
+    @include transition(box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.md-page-content {
+  &.x-form.x-floating {
+    border: none !important;
+    @include border-radius(0);
+    background: none !important;
+    background-color: $md-white-100 !important;
+    padding: $standard-spacing;
+  }
+}
+
+@import "components/ripple.scss";
+@import "components/button.scss";
+@import "components/text-field.scss";
+@import "components/progress-circular.scss";
+@import "components/checkbox.scss";
+@import "components/slider.scss";
+@import "components/tab.scss";
+@import "components/toggle.scss";
+@import "components/select.scss";
+@import "components/toolbar.scss";
+@import "components/message-box.scss";
+@import "components/date-picker.scss";
+
+
+
+

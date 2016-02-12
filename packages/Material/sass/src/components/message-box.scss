@@ -1,0 +1,95 @@
+@mixin md-message-box {
+  .x-msgbox {
+
+    &.x-msgbox-dark {
+      @include border-radius(1px!important);
+      padding: 0 !important;
+      min-width: 280px !important;
+      border-color: #FAFAFA;
+      //pink
+
+      /*      color: darkgreen !important;*/
+      background-color: #FAFAFA;
+
+
+      .x-msgbox-inner {
+
+        padding: $standard-padding !important;
+        // margin: $standard-margin !important;
+
+        .x-msgbox-text {
+          padding: 0 !important;
+          margin: 0 !important;
+          text-align: left !important;
+          color: #1C1C1C;
+
+          border-radius: 2px;
+          .x-innerhtml
+          {
+            text-shadow: none;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            display:inline-block;
+          }
+        }
+      }
+      .x-component-outer
+      {
+
+
+          background: #eeeeee!important;
+
+      }
+      .x-toolbar.x-toolbar-dark {
+        background-color: #fff !important;
+
+      }
+      .x-msgbox-buttons .x-button-normal span {
+        opacity: 1;
+
+      }
+
+      .x-toolbar.x-toolbar-dark.x-msgbox-buttons {
+        padding: 0 $standard-spacing !important;
+        /*        background-color: #FAFAFA !important;*/
+
+        .x-button {
+
+          font-family: Calibri;
+          color: #3F73F4 !important;
+          border: none !important;
+          margin: $standard-spacing $standard-spacing/2 !important;
+          padding: $standard-spacing !important;
+          @extend .md-flat;
+          font-weight: normal !important;
+          text-align: center !important;
+          height: auto !important;
+          display: inline-block !important;
+          min-width: 64px !important;
+          border-radius: 1px !important;
+          .x-button-label {
+            text-align: center !important;
+          }
+
+          &:first-child {
+            margin-left: $standard-spacing !important;
+          }
+
+          &:last-child {
+            margin-right: $standard-spacing !important;
+          }
+          &:focus,
+          &:hover {
+            background: #EEEEEE!important;
+            background-color: #EEEEEE ;
+          }
+        }
+      }
+    }
+  }
+  .x-field .x-field-input, .x-field .x-input-el {
+
+    background: transparent;
+  }
+
+}

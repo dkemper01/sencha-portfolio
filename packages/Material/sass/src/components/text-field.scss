@@ -1,0 +1,209 @@
+﻿@mixin md-text-field {
+  /**
+  *  <div class="x-field-select x-field x-label-align-top x-field-large x-field-has-value x-field-labeled"">
+  *   <div class="x-form-label">
+  *     <span>Thời gian lưu dữ liệu</span>
+  *   </div>
+  *   <div class="x-component-outer" id="ext-element-299">
+  *     <div class="x-field-input">
+  *       <input class="x-input-el x-form-field x-input-text" type="text">
+  *       <div class="x-field-mask"></div>
+  *        <div class="x-clear-icon"></div>
+  *      </div>
+  *    </div>
+  *  </div>
+  */
+
+  $md-field-label-active-color: $md-primary-color-500;
+  $md-field-label-inactive-color: $md-black-54;
+  $md-field-border-inactive-color: $md-black-12;
+  $md-field-max-width: 300px;
+
+  .x-field.x-label-align-top {
+    background: none !important;
+    background-color: transparent !important;
+
+    margin: $standard-margin;
+    padding: 0;
+
+    font-size: 16px;
+    font-weight: normal;
+
+    .x-form-label {
+      padding: $standard-spacing 0 0 0 !important;
+      background: inherit !important;
+
+      position: relative;
+      bottom: -17px;
+      color: $md-field-label-inactive-color;
+
+      @include transform(translate3d(0, 24px, 0) scale(1));
+
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+      @include transition(transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s);
+
+      span {
+        font-weight: normal;
+      }
+    }
+
+    .x-field-input {
+      background: inherit !important;
+      border: none;
+      @include border-radius(0);
+     // width: 0px;
+      padding: $standard-spacing 0 ($standard-spacing - 1) 0 !important;
+      border-bottom: 1px solid $md-field-border-inactive-color;
+
+      -webkit-transition-property: border-color; *//* Safari *//*
+      transition-property:  border-color;
+      -webkit-transition-duration: 0.6s; *//* Safari *//*
+      transition-duration: 0.6s;
+
+
+      input.x-input-el {
+        padding: 0 !important;
+        background: inherit !important;
+        border: none !important;
+        background: transparent !important;
+       // -webkit-text-fill-color: red! important;     // text color input
+      }
+
+
+      .x-clear-icon {
+        display: none;
+      }
+    }
+
+
+      .x-field-input:before {
+        position: absolute;
+        bottom: -1px!important;
+        left: 0px;
+        background: red;
+        width: 50%;
+        height: 1px;
+        content: "";
+        -webkit-transition-property:width; *//* Safari *//*
+      transition-property:  width;
+        -webkit-transition-duration: 0.6s; *//* Safari *//*
+      transition-duration: 0.6s;
+
+      }
+    .x-field-input:after {
+      position: absolute;
+      bottom: -1px!important;
+      right: 0px;
+      background: red;
+      width: 50%;
+      height: 1px;
+      content: "";
+      -webkit-transition-property:width; *//* Safari *//*
+    transition-property:  width;
+      -webkit-transition-duration: 0.6s; *//* Safari *//*
+    transition-duration: 0.6s;
+
+    }
+
+    &:not(.x-has-placeholder){
+      &.x-field-has-value,
+      &.x-field-clearable,
+      &.x-field-readonly,
+      &.x-field-focused {
+        .x-form-label {
+          @include transform(translate3d(0, 4px, 0) scale(0.75));
+          bottom: -6px;
+        }
+
+
+      }
+    }
+
+    &.x-field-focused:not(.x-item-disabled):not(.x-field-readonly){
+      .x-form-label {
+        color: #00CC00;
+        bottom: -6px;
+      }
+
+      .x-field-input {
+        padding: $standard-spacing 0 ($standard-spacing - 2) 0 !important;
+        border-bottom: 2px solid #00CC00;
+
+
+
+        //height: 0px;
+      }
+      .x-field-input {
+        z-index: 9;
+        //  width: 500px;
+      }
+      .x-field-input:before {
+        position: absolute;
+        bottom: 0%;
+        left: 0px;
+        height: 2px;
+        bottom: -2px!important;
+        width: 0%;
+        content: "";
+        z-index: 10;
+      }
+      .x-field-input:after {
+        position: absolute;
+        bottom: 0%;
+        right: 0px;
+        height: 2px;
+        width: 0%;
+        content: "";
+        z-index: 10;
+        bottom: -2px!important;
+
+      }
+    }
+
+    &.x-has-placeholder {
+      .x-form-label {
+        -webkit-transform-origin: left;
+        transform-origin: left;
+      }
+
+      &.x-field-has-value,
+      &.x-field-clearable,
+      &.x-field-focused {
+        .x-form-label {
+          @include transform(translate3d(0, 24px, 0) scale(0));
+        }
+
+        .x-field-input {
+
+        }
+      }
+    }
+
+    &.x-field-xlarge {
+      width: $md-field-max-width + 2 * $standard-spacing;
+    }
+
+    &.x-field-large {
+      width: $md-field-max-width * 3/4;
+    }
+
+    &.x-field-medium {
+      width: $md-field-max-width / 2;
+    }
+
+    &.x-field-small {
+      width: $md-field-max-width / 4;
+    }
+    .x-field .x-input-el {
+      background: transparent!important;
+
+    }
+    .x-field .x-field-input, .x-field .x-input-el
+
+    {
+      background: transparent!important;
+
+    }
+  }
+}

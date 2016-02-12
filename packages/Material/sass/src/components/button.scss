@@ -1,0 +1,148 @@
+// Fab buttons
+$button-fab-width: 56px;
+$button-fab-height: 56px;
+$button-fab-padding: 16px;
+$button-fab-toast-offset: $toast-height + $toast-margin;
+
+@mixin md-button {
+/*
+<div class="x-button md-raised x-button-primary md-button">
+    <span class="x-badge" style="display: none;"></span>
+    <span class="x-button-icon x-hidden" id="ext-element-31"></span>
+    <span class="x-button-label" style="" id="ext-element-32">Title</span>
+</div>
+*/
+
+/**
+ * Position a FAB button.
+ */
+// @mixin fab-position($spot, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+//   &.md-fab-#{$spot} {
+//     top: $top;
+//     right: $right;
+//     bottom: $bottom;
+//     left: $left;
+//     position: absolute;
+//   }
+// }
+/*  .x-button-normal x-button md-raised x-floating x-sized md-button {
+    width: 200px !important;
+    height: 200px !important;
+  }*/
+
+  .x-button {
+    user-select: none;
+    position: relative;
+    outline: none;
+    border: 0;
+    margin: 0;
+    background: transparent;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: transparent;
+    margin: 8px;
+    //height: 100px !important;
+    // ui circle
+
+    //
+   @include border-radius(50%);
+
+    @include transition(box-shadow $swift-ease-in-out-duration $swift-ease-in-out-timing-function, background-color $swift-ease-in-out-duration $swift-ease-in-out-timing-function, transform $swift-ease-in-out-duration $swift-ease-in-out-timing-function);
+
+    &.md-flat {
+      //background: none;
+      @include border-radius(5%);
+      color: white !important;
+      background-color: #2196F3;
+      &:hover {
+        transform: translate3d(0, -1px, 0);
+       // @extend .md-shadow-bottom-z-2;
+       // background-color: #eeeeee !important
+      }
+    }
+
+    &.md-raised {
+      @include border-radius(50%);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -khtml-border-radius: 50%;
+      color: white !important;
+      background-color: #2196F3;
+    }
+
+    &.md-fab {
+      // @include fab-position(bottom-right, auto, $button-fab-width/2, $button-fab-height/2, auto);
+      // @include fab-position(bottom-left, auto, auto, $button-fab-height/2, $button-fab-width/2);
+      // @include fab-position(top-right, $button-fab-height/2, $button-fab-width/2, auto, auto);
+      // @include fab-position(top-left, $button-fab-height/2, auto, auto, $button-fab-width/2);
+
+      z-index: $z-index-fab;
+      width: $button-fab-width;
+      height: $button-fab-height;
+
+      @include border-radius(5%);
+      @include transition(0.2s linear);
+      @include transition-property(transform, box-shadow);
+    }
+
+    &:not(.x-item-disabled) {
+      &.md-raised,
+      &.md-fab {
+        @extend .md-shadow-bottom-z-1;
+
+        &:focus,
+        &:hover {
+          transform: translate3d(0, -1px, 0);
+          @extend .md-shadow-bottom-z-2;
+        }
+
+        &.x-button-primary {
+          background: none;
+          background-color: $md-accent-color-400;
+          color: $md-white-100;
+        }
+      }
+
+      &.md-flat {
+        &.x-button-primary {
+          color: white !important;
+        }
+      }
+    }
+
+    &.md-flat,
+    &.md-raised {
+      //min-width: 64px;
+      padding: $standard-padding;
+     // margin: $standard-margin;
+    }
+
+    &.md-raised,
+    &.md-fab {
+      @include transform(translate3d(0, 0, 0));
+
+    }
+
+    .x-badge {
+
+    }
+
+    .x-button-icon {
+
+    }
+
+    .x-button-label {
+
+    }
+  }
+}

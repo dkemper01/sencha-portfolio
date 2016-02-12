@@ -1,0 +1,109 @@
+@mixin md-select {
+
+  .x-mask {
+    &.x-mask-select-panel {
+      background-color: transparent !important;
+
+    }
+  }
+  .x-panel.x-mobile-select {
+    background-color: white !important;
+    border-radius: 0.15em !important;
+  }
+  .x-list-normal .x-list-item.x-item-selected.x-list-item-tpl {
+
+  }
+  .x-list-normal.forColorPicker .x-list-item.x-list-item-tpl
+  {
+    border: 0px!important;
+
+  }
+  .x-list-normal.forList .x-list-item.x-item-selected.x-list-item-tpl {
+    background: #DCDCDC !important;
+    border-top-color: #DCDCDC !important;
+
+    color: black;
+  }
+  .x-list-normal.forColorPicker .x-list-item.x-item-selected.x-list-item-tpl {
+    //background: #DCDCDC !important;
+    border:0px!important;
+    border-top-color: transparent !important;
+    border-top:0px!important;
+
+  }
+
+  .x-field.x-label-align-top.x-field-select .x-field-input:before {
+    content: '' !important;
+  }
+  .x-panel.x-mobile-select {
+    @include transform(scale(0));
+    @include transition(transform 0.2s ease-out);
+    background-color: white !important;
+    &.x-top.x-left {
+      -webkit-transform-origin: top left;
+      transform-origin: top left;
+
+      @include transform(scale(1));
+      top: 0;
+      left: 0;
+
+      &.x-hiding {
+        -webkit-transform-origin: top left;
+        transform-origin: top left;
+        @include transform(scale(0));
+      }
+    }
+
+    &.x-top.x-right {
+      -webkit-transform-origin: top right;
+      transform-origin: top right;
+
+      @include transform(scale(1));
+      top: 0;
+      right: 0;
+
+      &.x-hiding {
+        -webkit-transform-origin: top right;
+        transform-origin: top right;
+        @include transform(scale(0));
+      }
+    }
+
+    &.x-bottom.x-left {
+      -webkit-transform-origin: bottom left;
+      transform-origin: bottom left;
+
+      @include transform(scale(1));
+      bottom: 0;
+      left: 0;
+
+      &.x-hiding {
+        -webkit-transform-origin: bottom left;
+        transform-origin: bottom left;
+        @include transform(scale(0));
+      }
+    }
+
+    &.x-bottom.x-right {
+      -webkit-transform-origin: bottom right;
+      transform-origin: bottom right;
+
+      @include transform(scale(1));
+      bottom: 0;
+      right: 0;
+
+      &.x-hiding {
+        -webkit-transform-origin: bottom right;
+        transform-origin: bottom right;
+        @include transform(scale(0));
+      }
+    }
+    .x-list-item.x-list-item-tpl.x-item-selected {
+      background: transparent !important;
+      overflow: hidden;
+      -webkit-user-select: none;
+      user-select: none;
+      outline: none;
+    }
+  }
+}
